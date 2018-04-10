@@ -20,9 +20,7 @@ function MultiCurl($data = array(), $options = array()) {
     //Loop through the $data and create curl handles then add them to the multi-handle for curl
     foreach($data as $key => $value) {
         $curls[$key] = curl_init();
-        $url = $value;
-        curl_setopt($curls[$key], CURLOPT_URL, $url);
-        curl_setopt($curls[$key], CURLOPT_USERAGENT, $useragent);
+        curl_setopt($curls[$key], CURLOPT_URL, $value);
         curl_setopt($curls[$key], CURLOPT_HTTPHEADER, array('Accept: application/json'));
         curl_setopt($curls[$key], CURLOPT_HTTPGET, true);
         curl_setopt($curls[$key], CURLOPT_RETURNTRANSFER, 1);
