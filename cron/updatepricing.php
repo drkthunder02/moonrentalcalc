@@ -59,14 +59,13 @@ $time = time();
 //Going to use curl for these requests
 $urls = array();
 //Create the urls
-for($i = 0; $i < sizeof($ItemIDs); $i++) {
-    $urls[$i] = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $ItemIDs[$i];
+foreach($ItemIDs as $key => $value) {
+    $urls[$key] = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $value;
 }
 
 //Perform a multi-curl call to get all of the data at once
 $data = MultiCurl($urls);
 var_dump($data);
-die();
 
 //Update the pricing table
 foreach($data as $key => $value) {
