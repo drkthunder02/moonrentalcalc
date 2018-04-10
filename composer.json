@@ -1,0 +1,14 @@
+{
+    "name": "drkthunder02/moonrental",
+    "description": "Warped Intentions Moon Rental Calculator",
+    "authors": [
+        {
+            "name": "drkthunder02",
+            "email": "mancuso.christopher@gmail.com"
+        }
+    ],
+    "require": {
+        "PHP": ">=7.0",
+        "simplon/mysql": "1.3.4"
+    }
+}
