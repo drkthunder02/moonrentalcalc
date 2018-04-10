@@ -65,7 +65,7 @@ for($i = 0; $i < sizeof($ItemIDs); $i++) {
 
 //Perform a multi-curl call to get all of the data at once
 $data = MultiCurl($urls);
-var_dump();
+var_dump($data);
 die();
 
 //Update the pricing table
