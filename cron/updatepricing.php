@@ -49,7 +49,7 @@ $ItemIDs = array(
     "Thulium" => 16653,
 );
 
-$time = now();
+$time = time();
 
 //Get the json data for each ItemId from https://market.fuzzwork.co.uk/api/
 //Base url is https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=34
