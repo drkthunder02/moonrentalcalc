@@ -67,9 +67,6 @@ foreach($ItemIDs as $key => $value) {
 $data = MultiCurl($urls);
 var_dump($data);
 
-//Update the pricing table
-foreach($data as $key => $value) {
-    
-}
+
 //Close the database connection
 DBClose($db);

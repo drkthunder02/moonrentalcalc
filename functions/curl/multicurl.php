@@ -21,12 +21,9 @@ function MultiCurl($data = array(), $options = array()) {
     foreach($data as $key => $value) {
         $curls[$key] = curl_init();
         curl_setopt($curls[$key], CURLOPT_URL, $value);
-        curl_setopt($curls[$key], CURLOPT_USERAGENT, "Moon Rentals");
         curl_setopt($curls[$key], CURLOPT_HTTPHEADER, array('Accept: application/json'));
         curl_setopt($curls[$key], CURLOPT_HTTPGET, true);
         curl_setopt($curls[$key], CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curls[$key], CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($curls[$key], CURLOPT_SSL_VERIFYHOST, 2);
         //Extra Options
         if(!empty($options)) {
             curl_setopt_array($curls[$key], $options);
