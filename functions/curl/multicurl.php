@@ -48,5 +48,5 @@ function MultiCurl($data = array(), $options = array()) {
     //Once all the calls are completed close the multi curl channel
     curl_multi_close($mh);
     
-    return $results;
+    return $result;
 }

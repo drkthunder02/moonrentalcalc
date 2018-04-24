@@ -53,19 +53,29 @@ $ItemIDs = array(
 );
 
 $time = time();
-
+$item = array();
 //Get the json data for each ItemId from https://market.fuzzwork.co.uk/api/
 //Base url is https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=34
 //Going to use curl for these requests
+foreach($ItemIDs as $key => $value) {
+    $url = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $value;
+    $item = FuzzworkPrice($url);
+    var_dump($item);
+    die();
+    $db->insert('Prices', array(
+        'Name' => $key,
+        'ItemId' => $value,
+        'Price',
+        'Time' => $time
+    ));
+}
+
 $urls = array();
 //Create the urls
 foreach($ItemIDs as $key => $value) {
     $urls[$key] = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $value;
 }
 
-//Perform a multi-curl call to get all of the data at once
-$data = MultiCurl($urls);
-var_dump($data);
 
 
 //Close the database connection
