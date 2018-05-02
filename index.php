@@ -37,7 +37,6 @@ foreach($names as $name) {
 }
 printf("</select>");
 printf("<input class=\"form-control\" id=\"firstOre\" name=\"firstOre\" default=\"None\">");
-printf("<input class=\"form-control\" id=\"firstQuan\" name=\"firstQuan\" default=\"0.00\">");
 printf("</div>");
 printf("<div class=\"form-group\">");
 printf("<label class=\"text-white\" for=\"secondOre\">Second Ore</label>");
