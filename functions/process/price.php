@@ -118,7 +118,7 @@ printf("<h2>Warped Intentions Moon Rent Calculator</h2>");
 printf("</div>");
 printf("</div>");
 
-printf("<div class=\"container col-md-6 col-md-offset-3\">");
+printf("<div class=\"container col-md-4 col-md-offset-4\">");
 printf("<div class=\"jumbotron\">");
 printf("Rental Price: " . $rentalPrice . " ISK<br>");
 printf("Total Moon Value: " . $totalPriceMined . " ISK<br>");
