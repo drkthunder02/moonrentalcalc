@@ -36,8 +36,9 @@ foreach($names as $name) {
     printf("<option value=\"" . $name . "\">" . $name . "</option>");
 }
 printf("</select>");
-printf("<input class=\"form-control\" id=\"firstOre\" name=\"firstOre\" default=\"None\">");
+printf("<input class=\"form-control\" id=\"firstQuan\" name=\"firstQuan\" default=\"None\">");
 printf("</div>");
+//Second Ore
 printf("<div class=\"form-group\">");
 printf("<label class=\"text-white\" for=\"secondOre\">Second Ore</label>");
 printf("<select class=\"custom-select\" id=\"secondOre\" name=\"secondOre\">");
@@ -48,6 +49,7 @@ foreach($names as $name) {
 printf("</select>");
 printf("<input class=\"form-control\" id=\"secondQuan\" name=\"secondQuan\" default=\"0.00\">");
 printf("</div>");
+//Third Ore
 printf("<div class=\"form-group\">");
 printf("<label class=\"text-white\" for=\"thirdOre\">Third Ore</label>");
 printf("<select class=\"custom-select\" id=\"thirdOre\" name=\"thirdOre\">");
@@ -58,6 +60,7 @@ foreach($names as $name) {
 printf("</select>");
 printf("<input class=\"form-control\" id=\"thirdQuan\" name=\"thirdQuan\" default=\"0.00\">");
 printf("</div>");
+//Fourth Ore
 printf("<div class=\"form-group\">");
 printf("<label class=\"text-white\" for=\"fourthOre\">Fourth Ore</label>");
 printf("<select class=\"custom-select\" id=\"fourthOre\" name=\"fourthOre\">");
