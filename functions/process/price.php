@@ -87,8 +87,8 @@ if($fourthOre != "None") {
 
 //Calculate the total to price to be mined in one month
 $totalPriceMined = $firstTotal + $secondTotal + $thirdTotal + $fourthTotal;
-//Calculate the rental price
-$rentalPrice = $totalPriceMined * $config['RentalTax'] * $config['RefineRate'];
+//Calculate the rental price.  Refined rate is already included in the price from rental composition
+$rentalPrice = $totalPriceMined * $config['RentalTax'];
 
 
 //HTML Portion of the page

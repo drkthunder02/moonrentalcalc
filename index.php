@@ -15,59 +15,63 @@ require_once __DIR__.'/functions/registry.php';
 $db = DBOpen();
 
 //Get all the types of ore
-$names = $db->fetchColumn('SELECT Name FROM ItemComposition');
+$names = $db->fetchColumnMany('SELECT Name FROM ItemComposition ORDER BY Name ASC');
 
 PrintHTMLHeader();
+//Print the HTML Body tag
 printf("<body>");
 
-printf("<form action=\"functions/process/price.php\" method=\"POST\">");
+//Print page title
+printf("<div class=\"page-header text-white\" align=\"center\">");
+printf("<h2>Warped Intentions Moon Rental Calculator</h2>");
+printf("</div>");
+//Print the container for the form
+printf("<div class=\"container col-md-3 col-md-offset-3\">");
+printf("<form class=\"text-center\" action=\"functions/process/price.php\" method=\"POST\">");
 printf("<div class=\"form-group\">");
-printf("<label for=\"firstOre\">First Ore</label>");
+printf("<label class=\"text-white\" for=\"firstOre\">First Ore</label>");
 printf("<select class=\"custom-select\" id=\"firstOre\" name=\"firstOre\">");
-printf("<option selected>Choose Ore</option");
+printf("<option value=\"None\" selected>None</option>");
 foreach($names as $name) {
     printf("<option value=\"" . $name . "\">" . $name . "</option>");
 }
-printf("<option value=\"None\">None</option>");
 printf("</select>");
 printf("<input class=\"form-control\" id=\"firstOre\" name=\"firstOre\" default=\"None\">");
 printf("<input class=\"form-control\" id=\"firstQuan\" name=\"firstQuan\" default=\"0.00\">");
 printf("</div>");
 printf("<div class=\"form-group\">");
-printf("<label for=\"secondOre\">Second Ore</label>");
+printf("<label class=\"text-white\" for=\"secondOre\">Second Ore</label>");
 printf("<select class=\"custom-select\" id=\"secondOre\" name=\"secondOre\">");
-printf("<option selected>Choose Ore</option");
+printf("<option value=\"None\" selected>None</option>");
 foreach($names as $name) {
     printf("<option value=\"" . $name . "\">" . $name . "</option>");
 }
-printf("<option value=\"None\">None</option>");
 printf("</select>");
 printf("<input class=\"form-control\" id=\"secondQuan\" name=\"secondQuan\" default=\"0.00\">");
 printf("</div>");
 printf("<div class=\"form-group\">");
-printf("<label for=\"thirdOre\">Third Ore</label>");
+printf("<label class=\"text-white\" for=\"thirdOre\">Third Ore</label>");
 printf("<select class=\"custom-select\" id=\"thirdOre\" name=\"thirdOre\">");
-printf("<option selected>Choose Ore</option");
+printf("<option value=\"None\" selected>None</option>");
 foreach($names as $name) {
     printf("<option value=\"" . $name . "\">" . $name . "</option>");
 }
-printf("<option value=\"None\">None</option>");
 printf("</select>");
 printf("<input class=\"form-control\" id=\"thirdQuan\" name=\"thirdQuan\" default=\"0.00\">");
 printf("</div>");
 printf("<div class=\"form-group\">");
-printf("<label for=\"fourthOre\">Fourth Ore</label>");
+printf("<label class=\"text-white\" for=\"fourthOre\">Fourth Ore</label>");
 printf("<select class=\"custom-select\" id=\"fourthOre\" name=\"fourthOre\">");
-printf("<option selected>Choose Ore</option");
+printf("<option value=\"None\" selected>None</option>");
 foreach($names as $name) {
     printf("<option value=\"" . $name . "\">" . $name . "</option>");
 }
-printf("<option value=\"None\">None</option>");
 printf("</select>");
 printf("<input class=\"form-control\" id=\"fourthQuan\" name=\"fourthQuan\" default=\"0.00\">");
 printf("</div>");
 printf("<button type=\"submit\" class=\"btn btn-primary mb-s\">Click for Price</button>");
 printf("</form>");
+printf("</div>");
 
 printf("</body>");
 printf("</html>");
