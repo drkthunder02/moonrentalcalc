@@ -22,9 +22,10 @@ $thirdOre = filter_input(INPUT_POST, 'thirdOre');
 $thirdPerc = filter_input(INPUT_POST, 'thirdQuan');
 $fourthOre = filter_input(INPUT_POST, 'fourthOre');
 $fourthPerc = filter_input(INPUT_POST, 'fourthQuan');
+
 //Always assume a 1 month pull which equates to 5.55m3 per second or 2,592,000 seconds
 //Total pull size is 14,385,600 m3
-$totalPull = 14385600.00;
+$totalPull = 5.55 * (3600.00 * 24.00 * 30.00);
 //Get the configuration for pricing calculations
 $config = $db->fetchRow('SELECT * FROM Config');
 
@@ -96,5 +97,6 @@ printf("<body>");
 printf("<div class=\"jumbotron\">");
 printf("Rental Price: " . $rentalPrice . " ISK<br>");
 printf("Total Moon Value: " . $totalPriceMined . " ISK<br>");
+printf("Prices are based on 4 1-week pulls.<br>");
 printf("</div>");
 printf("</body>");

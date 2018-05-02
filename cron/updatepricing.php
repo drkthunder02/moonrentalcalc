@@ -60,23 +60,15 @@ $item = array();
 foreach($ItemIDs as $key => $value) {
     $url = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $value;
     $item = FuzzworkPrice($url);
-    var_dump($item);
-    die();
     $db->insert('Prices', array(
         'Name' => $key,
         'ItemId' => $value,
-        'Price',
+        'Price' => $item[$value]['sell']['median'],
         'Time' => $time
     ));
 }
 
-$urls = array();
-//Create the urls
-foreach($ItemIDs as $key => $value) {
-    $urls[$key] = 'https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=' . $value;
-}
-
-
+UpdateItemPricing();
 
 //Close the database connection
 DBClose($db);

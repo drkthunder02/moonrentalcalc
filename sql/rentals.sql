@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `Config` (
 --
 
 CREATE TABLE IF NOT EXISTS `OrePrices` (
+    `id` int(10) AUTO_INCREMENT,
     `Name` varchar(31) DEFAULT NULL,
     `ItemId` int(10) NOT NULL,
     `BatchPrice` decimal(10,2) DEFAULT '0.00',
@@ -44,11 +45,13 @@ CREATE TABLE IF NOT EXISTS `OrePrices` (
 --
 
 CREATE TABLE IF NOT EXISTS `Prices` (
+    `id` int(10) AUTO_INCREMENT,
     `Name` varchar(31) DEFAULT NULL,
     `ItemId` int(10) NOT NULL,
     `Price` decimal(10,2) NOT NULL DEFAULT '0.00',
     `Time` int(16) NOT NULL,
-    UNIQUE KEY `Name` (`Name`)
+    UNIQUE KEY `id` (`id`),
+    PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -95,5 +98,5 @@ CREATE TABLE IF NOT EXISTS `ItemComposition` (
     `Neodymium` int(11) NOT NULL DEFAULT '0',
     `Promethium` int(11) NOT NULL DEFAULT '0',
     `Thulium` int(11) NOT NULL DEFAULT '0',
-    UNIQUE KEY `oreName` (`Name`)
+    UNIQUE KEY `Name` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
