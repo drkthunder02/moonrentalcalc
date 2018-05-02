@@ -111,8 +111,15 @@ $totalPriceMined = number_format($totalPriceMined, "2", ".", ",");
 //HTML Portion of the page
 PrintHTMLHeader();
 printf("<body>");
+
+printf("<div class=\"container\">");
+printf("<div class=\"page-header\">");
+printf("<h2>Warped Intentions Moon Rent Calculator</h2>");
+printf("</div>");
+printf("</div>");
+
 printf("<div class=\"container col-md-6 col-md-offset-3\">");
-printf("<div class=\"jumbotron col-md-6\">");
+printf("<div class=\"jumbotron\">");
 printf("Rental Price: " . $rentalPrice . " ISK<br>");
 printf("Total Moon Value: " . $totalPriceMined . " ISK<br>");
 printf("</div>");
