@@ -23,6 +23,20 @@ $thirdPerc = filter_input(INPUT_POST, 'thirdQuan');
 $fourthOre = filter_input(INPUT_POST, 'fourthOre');
 $fourthPerc = filter_input(INPUT_POST, 'fourthQuan');
 
+//Divide by 100 if a whole number was entered instead of a decimal
+if($firstPerc >= 1.00) {
+    $firstPerc = $firstPerc / 100.00;
+}
+if($secondPerc >= 1.00) {
+    $secondPerc = $secondPerc / 100.00;
+}
+if($thirdPec >= 1.00) {
+    $thirdPerc = $thirdPerc / 100.00;
+}
+if($fourthPerc >= 1.00) {
+    $fourthPerc = $fourthPerc / 100.00;
+} 
+
 //Always assume a 1 month pull which equates to 5.55m3 per second or 2,592,000 seconds
 //Total pull size is 14,385,600 m3
 $totalPull = 5.55 * (3600.00 * 24.00 * 30.00);
@@ -30,7 +44,7 @@ $totalPull = 5.55 * (3600.00 * 24.00 * 30.00);
 $config = $db->fetchRow('SELECT * FROM Config');
 
 if($firstOre != "None") {
-    $firstComp = $db->fetchRow('SELECT * FROM Composition WHERE Name= :name', array('name' => $firstOre));
+    $firstComp = $db->fetchRow('SELECT * FROM ItemComposition WHERE Name= :name', array('name' => $firstOre));
     //Find the m3 value of the first ore
     $firstActualm3 = floor($firstPerc * $totalPull);
     //Calculate the units of the first ore
@@ -44,7 +58,7 @@ if($firstOre != "None") {
 }
 
 if($secondOre != "None") {
-    $secondComp = $db->fetchRow('SELECT * FROM Composition WHERE Name= :name', array('name' => $secondOre));
+    $secondComp = $db->fetchRow('SELECT * FROM ItemComposition WHERE Name= :name', array('name' => $secondOre));
     //find the m3 value of the second ore
     $secondActualm3 = floor($secondPerc * $totalPull);
     //Calculate the units of the second ore
@@ -90,6 +104,9 @@ $totalPriceMined = $firstTotal + $secondTotal + $thirdTotal + $fourthTotal;
 //Calculate the rental price.  Refined rate is already included in the price from rental composition
 $rentalPrice = $totalPriceMined * $config['RentalTax'];
 
+//Format the rental price to the appropriate number
+$rentalPrice = number_format($rentalPrice, "2", ".", ",");
+$totalPriceMined = number_format($totalPriceMined, "2", ".", ",");
 
 //HTML Portion of the page
 PrintHTMLHeader();
@@ -97,6 +114,5 @@ printf("<body>");
 printf("<div class=\"jumbotron\">");
 printf("Rental Price: " . $rentalPrice . " ISK<br>");
 printf("Total Moon Value: " . $totalPriceMined . " ISK<br>");
-printf("Prices are based on 4 1-week pulls.<br>");
 printf("</div>");
 printf("</body>");
