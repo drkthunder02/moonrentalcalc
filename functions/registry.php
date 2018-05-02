@@ -13,3 +13,4 @@ require_once __DIR__.'/../functions/database/dbclose.php';
 require_once __DIR__.'/../functions/html/printhtmlheader.php';
 require_once __DIR__.'/../functions/curl/multicurl.php';
 require_once __DIR__.'/../functions/curl/fuzzworkcurl.php';
+require_once __DIR__.'/../functions/process/updatepricing.php';
