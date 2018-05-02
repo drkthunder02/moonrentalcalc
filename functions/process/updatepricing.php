@@ -95,7 +95,7 @@ function UpdateItemPricing() {
                         ($composition['Titanium'] * $titaniumPrice) +
                         ($composition['Tungsten'] * $tungstenPrice) +
                         ($composition['Cadmium'] * $cadmiumPrice) +
-                        ($composition['Platnium'] * $platinumPrice) +
+                        ($composition['Platinum'] * $platinumPrice) +
                         ($composition['Vanadium'] * $vanadiumPrice) +
                         ($composition['Chromium'] * $chromiumPrice)+
                         ($composition['Technetium'] * $technetiumPrice) +
