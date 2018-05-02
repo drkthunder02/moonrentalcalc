@@ -113,7 +113,7 @@ PrintHTMLHeader();
 printf("<body>");
 
 printf("<div class=\"container\">");
-printf("<div class=\"page-header\">");
+printf("<div class=\"page-header\" align=\"center\">");
 printf("<h2>Warped Intentions Moon Rent Calculator</h2>");
 printf("</div>");
 printf("</div>");
@@ -122,6 +122,7 @@ printf("<div class=\"container col-md-4 col-md-offset-4\">");
 printf("<div class=\"jumbotron\">");
 printf("Rental Price: " . $rentalPrice . " ISK<br>");
 printf("Total Moon Value: " . $totalPriceMined . " ISK<br>");
+printf("Mail Minerva Arbosa with the month you are renting the moon, remit payment.<br>");
 printf("</div>");
 printf("</div>");
 printf("</body>");
