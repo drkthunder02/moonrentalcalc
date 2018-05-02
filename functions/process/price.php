@@ -30,7 +30,7 @@ if($firstPerc >= 1.00) {
 if($secondPerc >= 1.00) {
     $secondPerc = $secondPerc / 100.00;
 }
-if($thirdPec >= 1.00) {
+if($thirdPerc >= 1.00) {
     $thirdPerc = $thirdPerc / 100.00;
 }
 if($fourthPerc >= 1.00) {
