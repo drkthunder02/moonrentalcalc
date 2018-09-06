@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `Prices` (
 -- Table structure for table `ItemComposition`
 --
 
-CREATE TABLE `ItemComposition` (
+CREATE TABLE IF NOT EXISTS `ItemComposition` (
   `Name` varchar(31) DEFAULT NULL,
   `ItemId` int(10) NOT NULL,
   `m3Size` decimal(10,2) NOT NULL DEFAULT '0.00',
@@ -141,3 +141,56 @@ INSERT INTO `ItemComposition` (`Name`, `ItemId`, `m3Size`, `BatchSize`, `Tritani
 ('Monazite', 45511, '10.00', 100, 0, 0, 0, 0, 50, 150, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 20, 0, 0, 0, 10, 0, 0, 0, 0, 0, 22, 0, 0),
 ('Loparite', 45512, '10.00', 100, 0, 0, 0, 0, 100, 200, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 20, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 22, 0),
 ('Ytterbite', 45513, '10.00', 100, 0, 0, 0, 0, 50, 100, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 20, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22);
+
+--
+-- Table structure for Moons
+--
+
+CREATE TABLE IF NOT EXISTS `Moons` (
+    `id` int(10) AUTO_INCREMENT,
+    `System` varchar(10),
+    `Planet` varchar(10),
+    `Moon` varchar(10),
+    `FirstOre` varchar(50),
+    `FirstQuantity` int(3),
+    `SecondOre` varchar(50),
+    `SecondQuantity` int(3),
+    `ThirdOre` varchar(50),
+    `ThirdQuantity` int(3),
+    `FourthOre` varchar(50),
+    `FourthQuantity` int(3),
+    `RentalCorp` varchar(50),
+    `RentalEnd` int(12),
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `id` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Default Entries
+--
+
+INSERT INTO `Moons` (`System`, `Planet`, `Moon`, `FirstOre`, `FirstQuantity`, `SecondOre`, `SecondQuantity`, `ThirdOre`, `ThirdQuantity`, `FourthOre`, `FourthQuantity`) VALUES
+('LN-56V', '1', '1', 'Cubic Bistot', 43, 'Euxenite', 20, 'Immaculate Jaspet', 27, 'Sperrylite', 10),
+('LN-56V', '3', '1', 'Cubic Bistot', 35, 'Stable Veldspar', 35, 'Sylvite', 10, 'Ziron', 20),
+('LN-56V', '3', '5', 'Euxenite', 10, 'Sparkling Plagioclase', 34, 'Sperrylite', 32, 'Vanadinite', 24),
+('LN-56V', '5', '7', 'Loparite', 21, 'Monazite', 20, 'Pellucid Crokite', 31, 'Scintillating Hemorphite', 29),
+('LN-56V', '5', '15', 'Carnotite', 25, 'Opulent Pyroxeres', 45, 'Zircon', 31, 'None', 0),
+('JDAS-0', '5', '13', 'Otavite', 41, 'Pellucid Crokite', 30, 'Zeolites', 8, 'Zircon', 20),
+('JA-O6J', '10', '1', 'Dazzling Spodumain', 23, 'Flawless Arkonor', 23, 'Vanadinite', 18, 'Ytterbite', 36),
+('CX65-5', '5', '13', 'Cinnabar', 33, 'Lustrous Hedbergite', 26, 'Opulent Pyroxeres', 8, 'Pellucid Crokite', 31),
+('CX65-5', '5', '14', 'Glossy Scordite', 19, 'Pellucid Crokite', 57, 'Ytterbite', 22, 'None', 0),
+('CX65-5', '6', '4', 'Cinnabar', 23, 'Immaculate Jaspet', 35, 'Sylvite', 8, 'Zeolites', 32),
+('CX65-5', '7', '3', 'Cinnabar', 17, 'Flawless Arkonor', 44, 'Glossy Scordite', 26, 'Scheelite', 11),
+('6X7-JO', '7', '6', 'Chromite', 19, 'Pellucid Crokite', 23, 'Vanadinite', 18, 'Ytterbite', 40),
+('OGL8-Q', '3', '10', 'Brilliant Gneiss', 24, 'Cinnabar', 32, 'Resplendant Kernite', 18, 'Ziron', 26),
+('OGL8-Q', '5', '2', 'Brilliant Gneiss', 27, 'Cinnabar', 23, 'Scintillating Hemorphite', 39, 'Zeolites', 11),
+('J-ODE7', '5', '15', 'Cinnabar', 20, 'Coesite', 44, 'Sperrylite', 35, 'None', 0),
+('WQH-4K', '3', '2', 'Cubic Bistot', 21, 'Loparite', 10, 'Opulent Pyroxeres', 41, 'Sparkling Plagioclase', 29),
+('WQH-4K', '6', '18', 'Flawless Arkonor', 21, 'Immaculate Jaspet', 22, 'Loparite', 36, 'Sperrylite', 20),
+('WQH-4K', '7', '2', 'Pellucid Crokite', 32, 'Resplendant Kernite', 15, 'Scintillating Hemorphite', 42, 'Ytterbite', 11),
+('Q-S7ZD', '3', '1', 'Cinnbar', 36, 'Lustrous Hedbergite', 26, 'Resplendant Kernite', 28, 'Sparkling Plagioclase', 10),
+('Q-S7ZD', '5', '12', 'Platinoid Omber', 55, 'Ytterbite', 45, 'None', 0, 'None', 0),
+('GJ0-OJ', '8', '14', 'Opulent Pyroxeres', 31, 'Scintillating Hemorphite', 28, 'Stable Veldspar', 8, 'Cinnabar', 33),
+('GJ0-OJ', '8', '17', 'Cinnabar', 20, 'Cubic Bistot', 29, 'Lustrous Hedbergite', 42, 'Scheelite', 8),
+('XVV-21', '10', '4', 'Glossy Scordite', 17, 'Platinoid Omber', 20, 'Stable Veldspar', 22, 'Ytterbite', 42),
+('O7-7UX', '3', '2', 'Dazzling Spodumain', 35, 'Euxenite', 10, 'Lustrous Hedbergite', 36, 'Zircon', 18);
