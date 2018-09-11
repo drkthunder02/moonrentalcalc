@@ -109,12 +109,12 @@ class Login extends \W4RP\ESI {
             
             $corp = $this->GetESIInfo($char['corporation_id'], 'Corporation', $this->useragent);
             $this->corporationId = $char['corporation_id'];
-            $this->corporationName = $corp['corporation_name'];
+            $this->corporationName = $corp['name'];
             
             if(isset($corp['alliance_id'])) {
                 $ally = $this->GetESIInfo($corp['alliance_id'], 'Alliance', $this->useragent);
                 $this->allianceId = $corp['alliance_id'];
-                $this->allianceName = $ally['alliance_name'];
+                $this->allianceName = $ally['name'];
             }
         }  
         

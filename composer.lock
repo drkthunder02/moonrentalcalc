@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d37ed3c26598712ef5170487d4d3cb99",
     "content-hash": "8e5c97ad75f43f80a35733e662449a02",
     "packages": [
         {
@@ -50,7 +49,7 @@
                 "mysql",
                 "pdo"
             ],
-            "time": "2016-05-13 14:06:48"
+            "time": "2016-05-13T14:06:48+00:00"
         }
     ],
     "packages-dev": [],

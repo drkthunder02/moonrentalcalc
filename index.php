@@ -18,6 +18,7 @@ $db = DBOpen();
 $names = $db->fetchColumnMany('SELECT Name FROM ItemComposition ORDER BY Name ASC');
 
 PrintHTMLHeader();
+PrintNavBar();
 //Print the HTML Body tag
 printf("<body>");
 
